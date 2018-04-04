@@ -13,12 +13,27 @@ catch(Exception $e)
 //conection a la base de Donnée
 
 
-$num_carte = '126roi' ;
-$nom_usager = 'test' ;
-$prenom_usager = 'date';
-$date_naissance = '2018-05-23';
-$mdp_usager = 'avoir' ;
-$nivaeu_usager = 4 ;
+$num_carte = $_POST['carte'] ;
+$nom_usager =$_POST['nom']  ;
+$prenom_usager = $_POST['prenom'] ;
+$date_naissance = $_POST['date_naissance'] ;
+$mdp_usager = $_POST['mdp']  ;
+$nivaeu_usager = $_POST['niveau']  ;
+if ($num_carte == null) {
+	 header('Location: addusager.php');
+}
+elseif ($nom_usager== null) {
+	
+}
+
+elseif ($date_naissance== null) {
+	
+}
+elseif ($mdp_usager== null) {
+	
+}
+
+else{
 // Donnée récuperré du formulaire
 
 $req = $bdd->prepare('INSERT INTO usager(num_carte, nom_usager, prenom_usager, date_naissance, mdp_usager, nivaeu_usager) VALUES(:num_carte, :nom_usager, :prenom_usager, :date_naissance, :mdp_usager, :nivaeu_usager)');
@@ -33,5 +48,5 @@ $req->execute(array(
 	));
 //usager ajouter dans la base de donnée
 
-echo 'usager ajouter dans la base de donnée ' //CONFIRMATION DU TRANSFERT
+echo 'usager ajouter dans la base de donnée ';} //CONFIRMATION DU TRANSFERT
 ?>
