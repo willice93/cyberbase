@@ -12,7 +12,7 @@
       <p><a href="#">Link</a></p>
     </div>
     <div class="col-sm-8 text-left"> 
-    <h1>CYBERBASE</h1>
+    
     <?php include('log.php');?>
     </div>
     <div class="col-sm-2 sidenav">

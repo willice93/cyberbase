@@ -5,7 +5,7 @@
       <a class="navbar-brand" href="#">CyberBase</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="../pageAnim.php">Accueil Animateurs</a></li>
+      <li class="active"><a href="./index.php">Accueil </a></li>
 
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">La cyberbase <span class="caret"></span></a>
@@ -28,7 +28,7 @@
         
 
     
-      <li><a href="#">Suivi usager </a></li>
+      
     </ul>
   </div>
 
