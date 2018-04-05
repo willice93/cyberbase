@@ -21,7 +21,7 @@
       <p><a href="#">Link</a></p>
     </div>
     <div class="col-sm-8 text-left"> 
-      <h1>CYBERBASE</h1>
+      <h2>Ajouter un usager</h2>
 <div class="form-group col-xs-3 ">
     <form  action="addusager.php" method="POST">
 	numero de carte <input type="text" name="carte" class='form-control col-xs-3'><br>
