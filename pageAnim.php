@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <?php include 'head.php';?>
 <body>
+
 <?php include('menuAnim.php');?>
 <div class="container-fluid text-center">    
   <div class="row content">
@@ -12,17 +12,8 @@
       <p><a href="#">Link</a></p>
     </div>
     <div class="col-sm-8 text-left"> 
-      <h1>CYBERBASE</h1>
-    <form  action="usager/addusager.php" method="POST">
-	numero de carte <input type="text" name="carte" class='form-control col-xs-3'><br>
-	nom:<input type="text" name="nom" class='form-control'><br>
-	prenom:<input type="text" name="prenom" class='form-control' ><br>
-	date de naissance<input type="date" name="date_naissance" class='form-control'><br>
-	mot de passe<input type="text" name="mdp" class='form-control'><br>
-	niveau:<input type="text" name="niveau" class='form-control'><br>
-	<input type="submit" value="envoyer" class="btn btn-primary">
-
-</form>
+      <h1>bonjour</h1>
+    
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
@@ -35,11 +26,9 @@
   </div>
 </div>
 
-
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
 
 </body>
 </html>
-
