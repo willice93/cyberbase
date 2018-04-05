@@ -1,4 +1,4 @@
-
+<?php  include('inc.session.php');?>
 <!DOCTYPE html>
 <html lang="fr">
 <?php include 'head.php';?>
