@@ -29,7 +29,7 @@
         
 
         
-  <li><a href="../logout.php">deconnexion </a></li>
+  <li><a href="./logout.php">deconnexion </a></li>
     
       
     </ul>
