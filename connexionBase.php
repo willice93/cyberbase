@@ -1,12 +1,17 @@
 <?php
 
 //connexion a la base de donnée
-if($bdd = mysqli_connect('localhost', 'root', '', 'bd-cyb'))
+try
 {
-	// Si la connexion a réussi, rien ne se passe.
+
+	$bdd = new PDO('mysql:host=localhost;dbname=bd-cyb;charset=utf8', 'root', '');
+	$bdd2 = mysqli_connect("localhost", "root", "", "bd-cyb");
+
 }
-else // Mais si elle rate…
+
+catch(Exception $e)
+
 {
-	echo 'Erreur'; // On affiche un message d'erreur.
+    die('Erreur : '.$e->getMessage());
+
 }
-?>
