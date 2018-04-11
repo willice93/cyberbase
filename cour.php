@@ -8,7 +8,7 @@
      <?php include('leftSideUser.php'); ?>
     </div>
     <div class="col-sm-8 text-left"> 
-    <?php //contenu central ?>
+    <?php include('cour/index.php') ?>
     
     </div>
     <div class="col-sm-2 sidenav">
