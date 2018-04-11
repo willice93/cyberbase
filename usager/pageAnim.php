@@ -1,14 +1,14 @@
-<?php  include('inc.session.php');?>
+<?php  include('../inc.session.php');?>
 <!DOCTYPE html>
 <html lang="fr">
-<?php include 'head.php';?>
+<?php include '../head.php';?>
 <body>
 
 <?php include('menuAnim.php');?>
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
+      <p><a href="../cour.php">Voir les cours</a></p>
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
     </div>

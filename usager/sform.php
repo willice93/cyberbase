@@ -1,20 +1,16 @@
-<?php
-
-?>
-<!DOCTYPE html>
 <?php include '../head.php';?>
+<?php  include('../inc.session.php');?>
 <body>
 
 <?php include('menuAnim.php');?>
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <?php include('../leftSide.php');?>  
-   </div>
-
+     <?php include('../leftSide.php');?>
+    </div>
     <div class="col-sm-8 form-group">
            <div class="col-sm-4 text-left"> 
-      <h3><b>Ajout usager</b></h3><br>
+      <h3><b>Supprimer Usager</b></h3><br>
 
     <form  action="addusager.php" method="POST">
 	numero de carte <input required type="text" name="carte" class='form-control col-xs-3'><br>
@@ -37,7 +33,7 @@
 </div>
    
 
-    
+
   </div>
 </div>
  </div>

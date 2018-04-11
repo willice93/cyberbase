@@ -35,8 +35,9 @@ if(isset($_POST['connexion'])) { // si le bouton "Connexion" est appuyé
 
                 if(mysqli_num_rows($Requete) == 0 AND mysqli_num_rows($Requete2)== 0) {
                     
-                    header('Location: index2.html');
+                    
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
+                    header('Location: index.php');
                 } 
 
                 elseif (mysqli_num_rows($Requete) == 1 ){
@@ -50,7 +51,7 @@ if(isset($_POST['connexion'])) { // si le bouton "Connexion" est appuyé
                     // on ouvre la session avec $_SESSION:
                     $_SESSION['pseudo'] = $Pseudo; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     echo "Vous êtes à présent connecté !";
-                    header('Location: pageAnim.php');
+                    header('Location: usager/pageAnim.php');
                     exit;
                 }
                 

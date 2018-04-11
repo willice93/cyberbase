@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">

@@ -9,7 +9,7 @@
 <p ><span class="font-3">Numero de Carte</span><span ></span></p>
 
 
-<input type="text" name="pseudo" class="form-control col-lg-3">
+<input type="text" name="pseudo" class="form-control col-lg-3" required>
 
 
 <p ><span class="font-3">Mot de Passe</span><span ></span></p>
@@ -18,6 +18,6 @@
 <br>
 <br>
 <br>
-<input type="submit" name="connexion" class="btn btn-primary" >
+<input type="submit" name="connexion" class="btn btn-primary" required>
 </div>
 </form>

@@ -6,6 +6,6 @@ session_start ();
 if ((!isset($_SESSION['pseudo'])) || (empty($_SESSION['pseudo'])))
   {
     // la variable 'login' de session est non déclaré ou vide
-    echo '  <p>Petit curieux... <a href="index.php" title="Connexion">Connexion d\'abord !</a></p>';
+    echo '  <p>Petit curieux... <a href="../index.php" title="Connexion">Connexion d\'abord !</a></p>';
     exit();
   }?>
