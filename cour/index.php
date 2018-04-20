@@ -10,6 +10,8 @@ if ((!isset($_SESSION['pseudo'])) || (empty($_SESSION['pseudo'])))
     echo '  <p>Petit curieux... <a href="../index.php" title="Connexion">Connexion d\'abord !</a></p>';
     exit();
   }
+
+  $video="BIBLIOTHEQUE.mp4";
   require('modelQcm.php');
 require('courView.php');
 

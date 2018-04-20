@@ -2,7 +2,7 @@
 
 
 //decoupage de la chaine en 4 partie question reponse 
-$question =file_get_contents("qcm.txt", "r");
+$question =file_get_contents("qcm/qcm.txt", "r");
 $question = explode("?", $question);
 
 

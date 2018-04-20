@@ -1,26 +1,24 @@
 
-
-<?php include '../head.php';
-
-?>
+<?php include '../head.php';?>
 <body>
 
-<?php include('menuUser.php');$video="BIBLIOTHEQUE.mp4";?>
+<?php include('menuUser.php');?>
+
 <div class="container-fluid text-center">    
   <div class="row content">
-                  
-  
-           <div class="col-sm-6 text-left"> 
-     
-                  
-                    
-                      <?php echo'<video width="600" height="400" controls="controls" src='.$video.'>';?>
-                    
-               
-	
- </div>
+         <section>        
+          <!--video-->
+           <div id="video" class="col-sm-6 text-left">                     
+                      <?php 
+                                  //concatenation lien video
+            $src='src="../video/'.$video.'">';
+            $link='<video width="600" height="400" controls="controls"'.$src.'' ;
+                                  echo $link;
+                        ?>                           
+             </div>
+             </section> 
+          <section>
  <div class="col-sm-6 text-left"> 
-
                                <?php 
                                  $x=0;
                                  if (isset($_GET['quest'])) {
@@ -28,7 +26,7 @@
                                  }
                                  else{$y=1;}
                                  
-echo' <form method="POST" action=index.php?quest='.$y.'> ';
+                          echo' <form method="POST" action=index.php?quest='.$y.'> ';
                                   $reponsesQ1 = explode("-", $reponse[$y]);
                               //on ecrit la question 
                               echo '<h2>'.$reponsesQ1[0].'</h2><br>';//question
@@ -38,47 +36,50 @@ echo' <form method="POST" action=index.php?quest='.$y.'> ';
                               //generer les value a la voléé
 
                               for ($i=1; $i <5 ; $i++) { 
-                                $pos = strpos($reponsesQ1[$i], $findme);
-                              if ($pos === false) {echo'<input type="radio" name="a1" value="0">'.$reponsesQ1[$i].'<br>';} 
-                              else {$answer=explode("*", $reponsesQ1[$i]);
+                                        $pos = strpos($reponsesQ1[$i], $findme);
+                                      if ($pos === false) {echo'<input type="radio" name="a1" value="0">'.$reponsesQ1[$i].'<br>';} 
+                                      else {$answer=explode("*", $reponsesQ1[$i]);
 
-                                      echo'<input type="radio" name="a1" value="1">'.$answer[1].'<br>';}
-                              }
-                                ?>
-                                <br>
-                              <input type="submit" value="validez" "><br>
-                                </form>
-</div>
-<div id='correction'>
+                                              echo'<input type="radio" name="a1" value="1">'.$answer[1].'<br>';}
+                                      }
+                                        ?>
+                                        <br>
+                                      <input type="submit" value="validez" "><br>
+                                        </form>
+                                     
+                                        
+      </div>
+                      <div id='correction ' >
 
                                     <?php 
 
                                          if (isset($_POST['a1'])){
                                       if($_POST['a1']==1){ $y++; 
-if ($num>$y) {
-   header('Location: index.php?quest='.$y) ; }
-   else{'echo cours fini';}
+                                        if ($num>$y) {
+                                           header('Location: index.php?quest='.$y) ; }
+                                           else{'echo cours fini';}
   
-}
+                                                      }
 
                                            
                                       elseif ($_POST['a1']==0) {
                                         
-                                       echo 'reponse fausse';
-                                      }
-                                  }
-                                  else{}
-                                    
- $prct=$y*100/$num;
-                                 
-                                  ?>
+                                       echo' <div class="alert alert-warning x col-sm-2">
+                                            <strong>Warning!</strong> Reponse fausse 
+                                              </div>';
+                                                      }
+                                                  }
+                                                  else{}
+                                                    
+                                                      $prct=$y*100/$num;
+                                                 
+                                                  ?>
 
-</div>
-<br>
-  <div class="progress col-sm-3">
-<?php echo '<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: '.$prct.'%">';?>
+                            </div>
+                        <div class="progress col-sm-5">
+                            <?php echo '<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: '.$prct.'%">';?>
 
-</div>
+                      </div>
 </div> 
 
 
@@ -87,8 +88,7 @@ if ($num>$y) {
 
     
   </div>
-</div>
- </div>
+ </section>
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
