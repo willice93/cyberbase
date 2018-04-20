@@ -46,7 +46,7 @@ echo' <form method="POST" action=index.php?quest='.$y.'> ';
                               }
                                 ?>
                                 <br>
-                              <input type="submit" value="validez" ">
+                              <input type="submit" value="validez" "><br>
                                 </form>
 </div>
 <div id='correction'>
@@ -74,9 +74,10 @@ if ($num>$y) {
                                   ?>
 
 </div>
+<br>
   <div class="progress col-sm-3">
 <?php echo '<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: '.$prct.'%">';?>
-<span class="sr-only">40% effectué (success)</span>
+
 </div>
 </div> 
 
