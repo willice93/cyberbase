@@ -12,3 +12,4 @@ $num=count($question);
 for ($i=1; $i <$num ; $i++) { 
 	$reponse[$i]=$question[$i];
 }
+

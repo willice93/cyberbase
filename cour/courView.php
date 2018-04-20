@@ -1,7 +1,7 @@
 
 
 <?php include '../head.php';
-include'modelQcm.php';
+
 ?>
 <body>
 
@@ -28,7 +28,7 @@ include'modelQcm.php';
                                  }
                                  else{$y=1;}
                                  
-echo' <form method="POST" action="courView.php?quest='.$y.'"> ';
+echo' <form method="POST" action=index.php?quest='.$y.'> ';
                                   $reponsesQ1 = explode("-", $reponse[$y]);
                               //on ecrit la question 
                               echo '<h2>'.$reponsesQ1[0].'</h2><br>';//question
@@ -50,20 +50,32 @@ echo' <form method="POST" action="courView.php?quest='.$y.'"> ';
                                 </form>
 </div>
 <div id='correction'>
-  <?php if (isset($_POST['a1'])){
-    if($_POST['a1']==1){ $y++; header('Location: courView.php?quest='.$y) ; }
-    elseif ($_POST['a1']==0) {
-      
-     echo 'reponse fausse';
-    }
+
+                                    <?php 
+
+                                         if (isset($_POST['a1'])){
+                                      if($_POST['a1']==1){ $y++; 
+if ($num>$y) {
+   header('Location: index.php?quest='.$y) ; }
+   else{'echo cours fini';}
+  
 }
-else{}
 
+                                           
+                                      elseif ($_POST['a1']==0) {
+                                        
+                                       echo 'reponse fausse';
+                                      }
+                                  }
+                                  else{}
+                                    
+ $prct=$y*100/$num;
+                                 
+                                  ?>
 
-  ?>
 </div>
   <div class="progress col-sm-3">
-<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+<?php echo '<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: '.$prct.'%">';?>
 <span class="sr-only">40% effectué (success)</span>
 </div>
 </div> 
