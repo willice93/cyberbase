@@ -1,0 +1,23 @@
+?qpourais je avoir du chocolat
+-oui
+-non
+-peut etre
+-*pes de bras pas de chocolat
+
+? question2
+-reponceA2
+-*reponceB2
+-reponceC2
+-reponseD2
+
+?question3
+-*reponceA3
+-reponceB3
+-reponceC3
+-reponseD3
+
+?question4
+-reponceA4
+-reponceB4
+-*reponceC4
+-reponseD4

@@ -44,7 +44,7 @@ if(isset($_POST['connexion'])) { // si le bouton "Connexion" est appuyé
                      // on ouvre la session avec $_SESSION:
                     $_SESSION['pseudo'] = $Pseudo; // la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     echo "Vous êtes à présent connecté !";
-                    header('Location: cour.php');
+                    header('Location: cour/index.php');
                     exit;
                 } 
                 elseif (mysqli_num_rows($Requete2) == 1 ){

@@ -1,40 +1,61 @@
 <?php
 //OBJECTIF Ajouter un usager
  //conection a la base de Donnée
-try
-{
-	$bdd = new PDO('mysql:host=localhost;dbname=bd-cyb;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+
+
+
+
+function verif($nom_table,$num_arg1,$var_recherche){
 	$bdd2 = mysqli_connect("localhost", "root", "", "bd-cyb");
-}
-catch(Exception $e)
+
+// verifie si la la valeur existe  dans la table1
+//requete SELECT
+$resultat2 = mysqli_query($bdd2, 'SELECT * FROM '.$nom_table.'');
+//initialisation du compteur 
+$x=0;
+
+//tant qu'on parcour le tableau de resultat on cree 2 autre tableau pour stocker les valeurs
+/*changer le nom des tableau pour etre plus clair */
+while($row_user= mysqli_fetch_row($resultat2))
 {
-        die('Erreur : '.$e->getMessage());
+
+	$mailtab[$x]=$row_user[$num_arg1];
+	
+	$x++;
 }
 
-include ('verif.php');
+mysqli_free_result($resultat2);
+// on recupere la taille du tableau 
+$fin_user=count($mailtab);
+
+$verif_user = NULL;
+/* rajouter un AND num_rue a faire sinon 
+le num de rue n'est pas pris en compte*/
+for ($z=0; $z < $fin_user; $z++) {
+	if ($mailtab[$z] == $var_recherche) {
+
+$verif_user = true; 
+$verif_adress = true;
+break;
+
+}	else {
+$verif_user = false;
+$verif_adress = false;
+	}
+
+}
+return $verif_user AND $verif_adress;
+} 
 
 
 
-$num_carte = htmlspecialchars($_POST['carte']) ;
-$nom_usager =htmlspecialchars($_POST['nom'])  ;
-$prenom_usager = htmlspecialchars($_POST['prenom']) ;
-$date_naissance = htmlspecialchars($_POST['date_naissance']) ;
-$mdp_usager = htmlspecialchars($_POST['mdp'])  ;
-$nivaeu_usager = htmlspecialchars($_POST['niveau']) ;
-$numero_rue = htmlspecialchars($_POST['rue']);
-$libelle_rue = htmlspecialchars($_POST['libelle']);
-$ville = htmlspecialchars($_POST['ville']);
-$code_postale = htmlspecialchars($_POST['code_postale']);
 
-
-
+function addUser($num_carte,$nivaeu_usager,$prenom_usager,$date_naissance,$mdp_usager,$nivaeu_usager,$numero_rue,$libelle_rue,$ville,$code_postale)){					
 // verifie si le numero de carte existe deja dans la bdd
 $verif_user = verif('usager', 1, $num_carte);
 $verif_adress = verif('adresse',2,$libelle_rue);
 
-
-
-					// Si l'adresse exite pas creer la
+// Si l'adresse exite pas creer la
 
 if ($verif_adress == false AND $verif_user == false) {
 												//requete adresse 
@@ -113,5 +134,7 @@ $req->execute(array(
 
 echo "Bonjour, $nom_usager votre compte à bien été crée";
 echo'<a href="aform.php">retour</a>';
+}
+
 }
 ?>
