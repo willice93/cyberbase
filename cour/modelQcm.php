@@ -6,7 +6,9 @@ $question =file_get_contents("qcm.txt", "r");
 $question = explode("?", $question);
 
 
-$reponse1=$question[1];
-$reponse2=$question[2];
-$reponse3=$question[3];
-$reponse4=$question[4];
+
+//lis autant de question qui l'en trouve 
+$num=count($question);
+for ($i=1; $i <$num ; $i++) { 
+	$reponse[$i]=$question[$i];
+}
