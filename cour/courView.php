@@ -47,7 +47,7 @@
                                       <input type="submit" value="validez" "><br>
                                         </form>
                                      
-                                        
+
       </div>
                       <div id='correction ' >
 
@@ -56,7 +56,12 @@
                                          if (isset($_POST['a1'])){
                                       if($_POST['a1']==1){ $y++; 
                                         if ($num>$y) {
-                                           header('Location: index.php?quest='.$y) ; }
+                                          echo'<div class="alert alert-success  col-sm-2"><strong>Bravo!</strong> Bonne reponse.Notez la et continuez</div>';
+                                           
+                                        
+                                        echo'   <a href="index.php?quest='.$y.'" class="btn btn-info" role="button">Je continue</a> ';}
+                                           
+
                                            else{'echo cours fini';}
   
                                                       }
@@ -65,7 +70,7 @@
                                       elseif ($_POST['a1']==0) {
                                         
                                        echo' <div class="alert alert-warning x col-sm-2">
-                                            <strong>Warning!</strong> Reponse fausse 
+                                            <strong>Faux!</strong> Recommencez
                                               </div>';
                                                       }
                                                   }
