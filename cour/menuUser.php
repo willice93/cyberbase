@@ -5,7 +5,7 @@
       <a class="navbar-brand" href="#">CyberBase</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="./pageAnim.php">Accueil Animateurs</a></li>
+      <li class="active"><a href="./pageAnim.php">Accueil Usager</a></li>
 
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Aide </a>

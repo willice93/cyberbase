@@ -54,7 +54,7 @@ echo' <form method="POST" action="courView.php?quest='.$y.'"> ';
     if($_POST['a1']==1){ $y++; header('Location: courView.php?quest='.$y) ; }
     elseif ($_POST['a1']==0) {
       
-     echo $y;
+     echo 'reponse fausse';
     }
 }
 else{}
